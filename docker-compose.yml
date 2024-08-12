@@ -1,0 +1,25 @@
+version: "3.5"
+
+services:
+  app:
+    container_name: "laravel-11-mantine-app"
+    ports:
+      - 80:8000
+      - 5173:5173
+    volumes:
+      - .:/var/www/html
+      - ./docker/app/php-overrides.ini:/usr/local/etc/php/conf.d/php-overrides.ini
+    build: .
+    command: bash -c "composer install; php -S laravel-11-mantine-app:8000 -t public;"
+    restart: "no"
+  db:
+    ports:
+      - "3306:3306"
+    image: mysql:8
+    container_name: "laravel-11-mantine-db"
+    restart: "no"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
