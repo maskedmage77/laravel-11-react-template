@@ -17,31 +17,15 @@ createInertiaApp({
     let darkEnabled = true;
 
     const theme = createTheme({
-      primaryColor: 'blue',
+      fontFamily: 'Jost, Helvetica sans-serif',
+      primaryColor: 'green',
       colors: {
         gray: ["#f8f8f8", "#f3f3f3", "#e9e9e9", "#cecece", "#adadad", "#868686", "#494949", "#343434", "#212121", "#111111"]
       },
       components: {
-        Input: Input.extend({
-          styles: {
-            input: { 
-              // @ts-ignore
-              // backgroundColor: darkEnabled ? 'var(--mantine-color-dark-5)' : 'var(--mantine-color-gray-2)'
-            }
-          }
-        }),
-        Checkbox: Checkbox.extend({
-          styles: {
-            input: { 
-              // @ts-ignore
-              // backgroundColor: darkEnabled ? 'var(--mantine-color-dark-5)' : 'var(--mantine-color-gray-2)'
-            }
-          }
-        }),
         Card: Card.extend({
           styles: {
             root: { 
-              // @ts-ignore
               backgroundColor: darkEnabled ? 'var(--mantine-color-dark-7)' : 'var(--mantine-color-gray-1)'
             }
           }

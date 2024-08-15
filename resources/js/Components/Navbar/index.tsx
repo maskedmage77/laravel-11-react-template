@@ -1,24 +1,19 @@
-import { AppShell, useMantineColorScheme } from "@mantine/core";
+import { AppShell, Group, useMantineColorScheme, Text, rem } from "@mantine/core";
 import { IconUsers } from '@tabler/icons-react';
-import { LinksGroup } from "./NavbarLinksGroup";
 
 const linkData = [
   {
     label: 'Users',
     icon: IconUsers,
     link: '/users',
-    links: [
-      { label: 'Create User', link: '/users/create' }
-    ]
   }
 ];
 
 export default function Navbar() {
 
   const colorScheme = useMantineColorScheme().colorScheme;
-
-  const links = linkData.map((item) => <LinksGroup {...item} key={item.label} />);
-
+  
+  
   return (
     <AppShell.Navbar
       p="md"
@@ -26,7 +21,31 @@ export default function Navbar() {
         backgroundColor: colorScheme === "dark" ? 'var(--mantine-color-dark-7)' : 'var(--mantine-color-gray-1)'
       }}
     >
-      <div>{links}</div>
+      { linkData.map((link, index) => (
+        <Group
+          key={index}
+          gap="md"
+          align="center"
+          style={{
+            cursor: 'pointer',
+            padding: '8px 16px',
+            backgroundColor: colorScheme === "dark" ? 'var(--mantine-color-dark-8)' : 'var(--mantine-color-gray-2)',
+            borderRadius: rem(8),
+          }}
+        >
+          <link.icon
+            style={{
+              color: 'var(--mantine-color-green-5)',
+            }}
+            size={20}
+          />
+          <Text 
+            c={'green.4'}
+          >
+            {link.label}
+          </Text>
+        </Group>
+      )) }
     </AppShell.Navbar>
   )
 }

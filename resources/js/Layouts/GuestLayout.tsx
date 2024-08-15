@@ -24,6 +24,7 @@ export default function Guest({ children }: PropsWithChildren) {
               cursor: 'pointer',
             }}
             fw={700}
+            c="green"
             onClick={() => router.get('/')}
           >
             Laravel 11 Mantine

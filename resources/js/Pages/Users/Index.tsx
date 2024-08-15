@@ -1,6 +1,6 @@
-import { ActionIcon, Card, Group, Title, useMantineColorScheme } from '@mantine/core';
 import deleteConfirmationModal from '@/Components/Modals/deleteConfirmationModal';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import { ActionIcon, Card, Group, Title } from '@mantine/core';
 import { IconEdit, IconTrash } from '@tabler/icons-react';
 import { Head, router } from '@inertiajs/react';
 import { DataTable } from 'mantine-datatable';
@@ -10,7 +10,6 @@ import { User } from '@/types/User';
 
 export default function Index({ auth, users }: PageProps<{ users: User[] }>) {
   const PAGE_SIZE = 15;
-  const mantineTheme = useMantineColorScheme();
   const [page, setPage] = useState(1);
   const [records, setRecords] = useState(users.slice(0, PAGE_SIZE));
 
@@ -33,7 +32,6 @@ export default function Index({ auth, users }: PageProps<{ users: User[] }>) {
         </Title>
 
         <DataTable
-          backgroundColor={mantineTheme.colorScheme}
           withColumnBorders
           records={records}
           columns={[{ accessor: 'name' },

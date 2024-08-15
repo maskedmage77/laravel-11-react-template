@@ -13,7 +13,7 @@ export default function Edit({ auth, mustVerifyEmail, status }: PageProps<{ must
     >
       <Head title="Profile" />
 
-      <Grid>
+      <Grid gutter={0}>
         <Grid.Col span={{ base: 12, lg: 6, xl: 4 }}>
           <UpdateProfileInformationForm
             mustVerifyEmail={mustVerifyEmail}

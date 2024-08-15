@@ -53,7 +53,7 @@ export default function Authenticated({ user, children }: PropsWithChildren<{ us
                 fontSize: '1.5rem',
                 cursor: 'pointer',
               }}
-              c="blue"
+              c="green"
               fw={700}
               onClick={() => router.get('/')}
             >
