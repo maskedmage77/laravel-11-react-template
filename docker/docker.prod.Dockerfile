@@ -17,14 +17,8 @@ RUN apk add --update \
   bash \
   && docker-php-ext-install zip
 
-  # Install PHP extensions
+# Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
-
-# Use the default production configuration
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-
-# Set up supervisor
-COPY ./docker/app/supervisord.conf /etc/supervisord.conf
 
 # Set up the application directory
 WORKDIR /var/www/html/

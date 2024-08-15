@@ -8,8 +8,9 @@ services:
       - 5173:5173
     volumes:
       - .:/var/www/html
-      - ./docker/app/php-overrides.ini:/usr/local/etc/php/conf.d/php-overrides.ini
-    build: .
+    build: 
+      context: .
+      dockerfile: ./docker/docker.dev.Dockerfile
     command: bash -c "composer install; php -S laravel-11-mantine-app:8000 -t public;"
     restart: "no"
   db:

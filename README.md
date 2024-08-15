@@ -6,10 +6,10 @@
 
 ## Installation
 
-### Local 
+### Development 
 
 ```bash
-docker compose up --build -d
+docker compose -f docker-compose.dev.yml up --build -d
 ```
 
 Shell into container
@@ -24,5 +24,16 @@ Install node packages
 npm install
 ```
 
+Running vite dev server
+
+```
+npm run dev
+```
+
+
 ### Production
 
+```bash
+docker compose -f docker-compose.prod.yml up --build -d
+
+```
