@@ -3,7 +3,7 @@ import { IconLogout, IconUser } from '@tabler/icons-react';
 import { PropsWithChildren, ReactNode } from 'react';
 import { router } from '@inertiajs/react';
 import { useDisclosure } from '@mantine/hooks';
-import { User } from '@/types';
+import { User } from '@/Types';
 import Navbar from '@/Components/Navbar';
 
 export default function Authenticated({ user, children }: PropsWithChildren<{ user: User, header?: ReactNode }>) {

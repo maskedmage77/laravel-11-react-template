@@ -5,8 +5,8 @@ import { IconEdit, IconTrash } from '@tabler/icons-react';
 import { Head, router } from '@inertiajs/react';
 import { DataTable } from 'mantine-datatable';
 import { useEffect, useState } from 'react';
-import { PageProps } from '@/types';
-import { User } from '@/types/User';
+import { PageProps } from '@/Types';
+import { User } from '@/Types/User';
 
 export default function Index({ auth, users }: PageProps<{ users: User[] }>) {
   const PAGE_SIZE = 15;

@@ -2,8 +2,8 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import UserEditForm from '@/Components/UserEditForm';
 import { Card, Title } from '@mantine/core';
 import { Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
-import { User } from '@/types/User';
+import { PageProps } from '@/Types';
+import { User } from '@/Types/User';
 
 export default function Edit({ auth, user }: PageProps<{ user: User }>) {
   return (

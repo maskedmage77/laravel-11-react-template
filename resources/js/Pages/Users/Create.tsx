@@ -2,7 +2,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import UserCreateForm from '@/Components/UserCreateForm';
 import { Card, Title } from '@mantine/core';
 import { Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
+import { PageProps } from '@/Types';
 
 export default function Create({ auth }: PageProps) {
   return (

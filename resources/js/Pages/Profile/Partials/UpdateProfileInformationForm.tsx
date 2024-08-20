@@ -1,4 +1,4 @@
-import { PageProps } from '@/types';
+import { PageProps } from '@/Types';
 import { router, useForm, usePage } from '@inertiajs/react';
 import { Button, Card, Stack, Text, TextInput, Title, Transition } from '@mantine/core';
 import { FormEventHandler } from 'react';
