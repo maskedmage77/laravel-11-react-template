@@ -8,7 +8,7 @@ import { User } from '@/Types/User';
 export default function Edit({ auth, user }: PageProps<{ user: User }>) {
   return (
     <AuthenticatedLayout
-      user={auth.user}
+      auth={auth}
     >
 
       <Head title="Edit Users" />

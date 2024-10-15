@@ -21,7 +21,7 @@ export default function Index({ auth, users }: PageProps<{ users: User[] }>) {
 
   return (
     <AuthenticatedLayout
-      user={auth.user}>
+      auth={auth}>
 
       <Head title="Users" />
 
@@ -32,12 +32,19 @@ export default function Index({ auth, users }: PageProps<{ users: User[] }>) {
         </Title>
 
         <DataTable
+          backgroundColor={{ dark: 'rgba(0,0,0,0)', light: 'rgba(0,0,0,0)' }}
           withColumnBorders
           records={records}
           columns={[{ accessor: 'name' },
           { accessor: 'email' },
-          { accessor: 'created_at' },
-          { accessor: 'updated_at' },
+          { 
+            accessor: 'created_at',
+            render: (user: User) => new Date(user.created_at).toLocaleDateString()
+          },
+          { 
+            accessor: 'updated_at',
+            render: (user: User) => new Date(user.updated_at).toLocaleDateString()
+          },
           {
             accessor: 'actions',
             render: (user: User) => (

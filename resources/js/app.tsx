@@ -1,4 +1,4 @@
-import { createTheme, MantineProvider, Input, Checkbox, Card } from '@mantine/core';
+import { createTheme, MantineProvider, Card } from '@mantine/core';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createInertiaApp } from '@inertiajs/react';
 import { ModalsProvider } from '@mantine/modals';

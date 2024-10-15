@@ -7,7 +7,7 @@ import { PageProps } from '@/Types';
 export default function Create({ auth }: PageProps) {
   return (
     <AuthenticatedLayout
-      user={auth.user}
+      auth={auth}
     >
 
       <Head title="Create Users" />

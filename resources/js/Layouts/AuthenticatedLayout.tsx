@@ -1,16 +1,25 @@
 import { ActionIcon, AppShell, Burger, Group, Menu, rem, Text, useMantineColorScheme } from '@mantine/core';
+import { PropsWithChildren, ReactNode, useEffect } from 'react';
 import { IconLogout, IconUser } from '@tabler/icons-react';
-import { PropsWithChildren, ReactNode } from 'react';
-import { router } from '@inertiajs/react';
+import useUserStore from '@/Hooks/useUserStore';
 import { useDisclosure } from '@mantine/hooks';
-import { User } from '@/Types';
+import { router } from '@inertiajs/react';
 import Navbar from '@/Components/Navbar';
 
-export default function Authenticated({ user, children }: PropsWithChildren<{ user: User, header?: ReactNode }>) {
+interface Props extends PropsWithChildren {
+  auth: any;
+  header?: ReactNode;
+  children: ReactNode;
+}
+
+export default function Authenticated({ auth, children }: Props) {
 
   const [opened, { toggle }] = useDisclosure();
   const colorScheme = useMantineColorScheme().colorScheme;
-  console.log(colorScheme);
+
+  useEffect(() => {
+    useUserStore.setState({ ...auth });
+  }, [auth]);
 
   return (
     <AppShell
@@ -21,11 +30,6 @@ export default function Authenticated({ user, children }: PropsWithChildren<{ us
         collapsed: { mobile: !opened },
       }}
       padding="md"
-      styles={{
-        root: {
-          backgroundColor: colorScheme === "dark" ? 'var(--mantine-color-dark-8)' : 'var(--mantine-color-gray-1)'
-        }
-      }}
     >
       <AppShell.Header
         style={{
@@ -68,7 +72,7 @@ export default function Authenticated({ user, children }: PropsWithChildren<{ us
             <Menu position="bottom-end">
 
               <Text size='sm' c="dimmed" visibleFrom="sm">
-                {user.email}
+                {auth.user.email}
               </Text>
 
               <Menu.Target>

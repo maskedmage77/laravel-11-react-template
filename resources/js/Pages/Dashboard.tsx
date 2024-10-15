@@ -6,7 +6,7 @@ export default function Dashboard({ auth }: PageProps) {
 
   return (
     <AuthenticatedLayout
-      user={auth.user}
+      auth={auth}
     >
       <Head title="Dashboard" />
     </AuthenticatedLayout>
