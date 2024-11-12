@@ -1,8 +1,9 @@
+import { Card, Title, Text, TextInput, Button, Stack, Transition } from '@mantine/core';
 import { useRef, FormEventHandler } from 'react';
 import { useForm } from '@inertiajs/react';
-import { Card, Title, Text, TextInput, Button, Stack, Transition } from '@mantine/core';
 
-export default function UpdatePasswordForm({ className = '' }: { className?: string }) {
+export default function UpdatePasswordForm() {
+  
   const passwordInput = useRef<HTMLInputElement>(null);
   const currentPasswordInput = useRef<HTMLInputElement>(null);
 

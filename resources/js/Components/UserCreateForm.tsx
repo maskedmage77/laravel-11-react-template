@@ -1,8 +1,9 @@
-import { router, useForm } from '@inertiajs/react';
 import { Button, PasswordInput, Stack, TextInput } from '@mantine/core';
+import { router, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
 
 export default function UserCreateForm() {
+  
   const { data, setData, processing, errors, post } = useForm({
     name: '',
     email: '',

@@ -1,4 +1,4 @@
-import { ActionIcon, AppShell, Burger, Group, Menu, rem, Text, useMantineColorScheme } from '@mantine/core';
+import { ActionIcon, AppShell, Burger, Group, Menu, rem, Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { PropsWithChildren, ReactNode, useEffect } from 'react';
 import { IconLogout, IconUser } from '@tabler/icons-react';
 import useUserStore from '@/Hooks/useUserStore';
@@ -16,6 +16,7 @@ export default function Authenticated({ auth, children }: Props) {
 
   const [opened, { toggle }] = useDisclosure();
   const colorScheme = useMantineColorScheme().colorScheme;
+  const theme = useMantineTheme();
 
   useEffect(() => {
     useUserStore.setState({ ...auth });
@@ -33,7 +34,9 @@ export default function Authenticated({ auth, children }: Props) {
     >
       <AppShell.Header
         style={{
-          backgroundColor: colorScheme === "dark" ? 'var(--mantine-color-dark-7)' : 'var(--mantine-color-gray-1)'
+          backgroundColor: colorScheme === "dark" 
+          ? 'var(--mantine-color-dark-7)'
+          : 'var(--mantine-color-gray-1)'
         }}
       >
 
@@ -57,7 +60,7 @@ export default function Authenticated({ auth, children }: Props) {
                 fontSize: '1.5rem',
                 cursor: 'pointer',
               }}
-              c="green"
+              c={theme.primaryColor}
               fw={700}
               onClick={() => router.get('/')}
             >
@@ -121,6 +124,7 @@ export default function Authenticated({ auth, children }: Props) {
       <AppShell.Main>
         {children}
       </AppShell.Main>
+
     </AppShell>
   );
 }

@@ -1,8 +1,9 @@
-import { useForm } from '@inertiajs/react';
 import { Button, Card, Group, Modal, Stack, Text, TextInput, Title } from '@mantine/core';
 import { FormEventHandler, useRef, useState } from 'react';
+import { useForm } from '@inertiajs/react';
 
-export default function DeleteUserForm({ className = '' }: { className?: string }) {
+export default function DeleteUserForm() {
+  
   const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
   const passwordInput = useRef<HTMLInputElement>(null);
 

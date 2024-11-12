@@ -1,5 +1,5 @@
-import { User } from '@/Types';
 import { create } from 'zustand';
+import { User } from '@/Types';
 
 interface UserState {
   user: User | undefined,

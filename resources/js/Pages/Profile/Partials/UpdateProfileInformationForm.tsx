@@ -1,7 +1,7 @@
-import { PageProps } from '@/Types';
-import { router, useForm, usePage } from '@inertiajs/react';
 import { Button, Card, Stack, Text, TextInput, Title, Transition } from '@mantine/core';
+import { router, useForm, usePage } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
+import { PageProps } from '@/Types';
 
 export default function UpdateProfileInformation({ mustVerifyEmail, status }: { mustVerifyEmail: boolean, status?: string, className?: string }) {
 

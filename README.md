@@ -19,13 +19,21 @@ docker exec -it laravel-11-mantine-app sh
 ```
 
 Install node packages
-
 ```
 npm install
 ```
 
-Running vite dev server
+Generate Encryption Key
+```
+php artisan key:generate
+```
 
+Run migrations
+```
+php artisan migrate
+```
+
+Running vite dev server
 ```
 npm run dev
 ```

@@ -1,5 +1,5 @@
-import { createTheme, MantineProvider, Card } from '@mantine/core';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
+import { createTheme, MantineProvider, Card } from '@mantine/core';
 import { createInertiaApp } from '@inertiajs/react';
 import { ModalsProvider } from '@mantine/modals';
 import { createRoot } from 'react-dom/client';
@@ -26,7 +26,9 @@ createInertiaApp({
         Card: Card.extend({
           styles: {
             root: { 
-              backgroundColor: darkEnabled ? 'var(--mantine-color-dark-7)' : 'var(--mantine-color-gray-1)'
+              backgroundColor: darkEnabled 
+                ? 'var(--mantine-color-dark-7)' 
+                : 'var(--mantine-color-gray-1)'
             }
           }
         })

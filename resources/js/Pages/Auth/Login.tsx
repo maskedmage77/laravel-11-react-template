@@ -1,9 +1,12 @@
-import { TextInput, Checkbox, Button, Text, Group, Stack } from '@mantine/core';
+import { TextInput, Checkbox, Button, Text, Group, Stack, useMantineTheme } from '@mantine/core';
 import { Head, Link, useForm } from '@inertiajs/react';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { FormEventHandler } from 'react';
 
 export default function Login({ status, canResetPassword }: { status?: string, canResetPassword: boolean }) {
+
+  const theme = useMantineTheme();
+  
   const { data, setData, post, processing, errors, reset } = useForm({
     email: '',
     password: '',
@@ -20,6 +23,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
 
   return (
     <GuestLayout>
+
       <Head title="Log in" />
 
       {status && <Text c="green" size="sm">{status}</Text>}
@@ -29,6 +33,7 @@ export default function Login({ status, canResetPassword }: { status?: string, c
       }}>
 
         <Stack>
+          
           <TextInput
             label="Email"
             id="email"
@@ -74,8 +79,11 @@ export default function Login({ status, canResetPassword }: { status?: string, c
           <Button disabled={processing} type="submit">
             Log in
           </Button>
+
         </Group>
+
       </form>
+
     </GuestLayout>
   );
 }

@@ -14,18 +14,18 @@ export default function Edit({ auth, mustVerifyEmail, status }: PageProps<{ must
       <Head title="Profile" />
 
       <Grid gutter={0}>
-        <Grid.Col span={{ base: 12, lg: 6, xl: 4 }}>
+        <Grid.Col>
           <UpdateProfileInformationForm
             mustVerifyEmail={mustVerifyEmail}
             status={status}
           />
         </Grid.Col>
-        <Grid.Col span={{ base: 12, lg: 6, xl: 4 }}>
-          <UpdatePasswordForm className="max-w-xl" />
+        <Grid.Col>
+          <UpdatePasswordForm />
         </Grid.Col>
 
-        <Grid.Col span={{ base: 12, lg: 6, xl: 4 }}>
-          <DeleteUserForm className="max-w-xl" />
+        <Grid.Col>
+          <DeleteUserForm />
         </Grid.Col>
       </Grid>
     </AuthenticatedLayout>

@@ -1,5 +1,5 @@
 import { AppShell, Group, useMantineColorScheme, Text } from "@mantine/core";
-import { IconMap, IconUsers } from '@tabler/icons-react';
+import { IconUsers } from '@tabler/icons-react';
 import useUserStore from "@/Hooks/useUserStore";
 import { router } from "@inertiajs/react";
 import styles from './Navbar.module.css';

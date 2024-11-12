@@ -1,10 +1,11 @@
+import { Card, Stack, Text, useMantineColorScheme, useMantineTheme } from '@mantine/core';
 import { router } from '@inertiajs/react';
-import { Card, Stack, Text, useMantineColorScheme } from '@mantine/core';
 import { PropsWithChildren } from 'react';
 
 export default function Guest({ children }: PropsWithChildren) {
 
   const colorScheme = useMantineColorScheme().colorScheme;
+  const theme = useMantineTheme();
 
   return (
     <div style={{
@@ -24,7 +25,7 @@ export default function Guest({ children }: PropsWithChildren) {
               cursor: 'pointer',
             }}
             fw={700}
-            c="green"
+            c={theme.primaryColor}
             onClick={() => router.get('/')}
           >
             Laravel 11 Mantine

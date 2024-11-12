@@ -1,5 +1,5 @@
-import { Text } from '@mantine/core';
 import { modals } from '@mantine/modals';
+import { Text } from '@mantine/core';
 
 interface Props { 
     objectName: string,
