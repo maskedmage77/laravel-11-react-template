@@ -18,8 +18,6 @@ export default function Navbar() {
   const colorScheme = useMantineColorScheme().colorScheme;
   const { permissions } = useUserStore();
 
-  console.log(window.location.pathname);
-
   return (
     <AppShell.Navbar
       p="md"

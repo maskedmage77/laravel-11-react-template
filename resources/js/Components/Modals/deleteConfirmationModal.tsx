@@ -20,5 +20,3 @@ export default function deleteConfirmationModal({ objectName, onConfirm } : Prop
     onConfirm: onConfirm,
   });
 }
-
- 
